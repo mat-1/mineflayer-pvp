@@ -84,7 +84,6 @@ export class PVP
 
         pathfinder.setGoal(new goals.GoalFollow(this.target, this.followRange), true);
 
-        // @ts-expect-error
         this.bot.emit('startedAttacking');
     }
 
@@ -102,7 +101,6 @@ export class PVP
         // @ts-expect-error Not in typescript definition, yet.
         pathfinder.setGoal(null);
 
-        // @ts-expect-error
         this.bot.emit('stoppedAttacking');
     }
 
@@ -176,7 +174,6 @@ export class PVP
             if (target !== this.target) throw 'Target changed!';
             this.bot.attack(this.target);
 
-            // @ts-expect-error
             this.bot.emit('attackedTarget');
         });
 
